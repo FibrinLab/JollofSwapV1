@@ -11,27 +11,27 @@ describe("Timelock", function () {
     this.dev = this.signers[3]
     this.minter = this.signers[4]
 
-    this.SushiToken = await ethers.getContractFactory("SushiToken")
+    this.JollofToken = await ethers.getContractFactory("JollofToken")
     this.Timelock = await ethers.getContractFactory("Timelock")
     this.ERC20Mock = await ethers.getContractFactory("ERC20Mock", this.minter)
-    this.MasterChef = await ethers.getContractFactory("MasterChef")
+    this.MamaPut = await ethers.getContractFactory("MamaPut")
   })
 
   beforeEach(async function () {
-    this.sushi = await this.SushiToken.deploy()
+    this.jollof = await this.JollofToken.deploy()
     this.timelock = await this.Timelock.deploy(this.bob.address, "259200")
   })
 
   it("should not allow non-owner to do operation", async function () {
-    await this.sushi.transferOwnership(this.timelock.address)
-    // await expectRevert(this.sushi.transferOwnership(carol, { from: alice }), "Ownable: caller is not the owner")
+    await this.jollof.transferOwnership(this.timelock.address)
+    // await expectRevert(this.jollof.transferOwnership(carol, { from: alice }), "Ownable: caller is not the owner")
 
-    await expect(this.sushi.transferOwnership(this.carol.address)).to.be.revertedWith("Ownable: caller is not the owner")
-    await expect(this.sushi.connect(this.bob).transferOwnership(this.carol.address)).to.be.revertedWith("Ownable: caller is not the owner")
+    await expect(this.jollof.transferOwnership(this.carol.address)).to.be.revertedWith("Ownable: caller is not the owner")
+    await expect(this.jollof.connect(this.bob).transferOwnership(this.carol.address)).to.be.revertedWith("Ownable: caller is not the owner")
 
     await expect(
       this.timelock.queueTransaction(
-        this.sushi.address,
+        this.jollof.address,
         "0",
         "transferOwnership(address)",
         encodeParameters(["address"], [this.carol.address]),
@@ -41,29 +41,29 @@ describe("Timelock", function () {
   })
 
   it("should do the timelock thing", async function () {
-    await this.sushi.transferOwnership(this.timelock.address)
+    await this.jollof.transferOwnership(this.timelock.address)
     const eta = (await latest()).add(duration.days(4))
     await this.timelock
       .connect(this.bob)
-      .queueTransaction(this.sushi.address, "0", "transferOwnership(address)", encodeParameters(["address"], [this.carol.address]), eta)
+      .queueTransaction(this.jollof.address, "0", "transferOwnership(address)", encodeParameters(["address"], [this.carol.address]), eta)
     await increase(duration.days(1))
     await expect(
       this.timelock
         .connect(this.bob)
-        .executeTransaction(this.sushi.address, "0", "transferOwnership(address)", encodeParameters(["address"], [this.carol.address]), eta)
+        .executeTransaction(this.jollof.address, "0", "transferOwnership(address)", encodeParameters(["address"], [this.carol.address]), eta)
     ).to.be.revertedWith("Timelock::executeTransaction: Transaction hasn't surpassed time lock.")
     await increase(duration.days(4))
     await this.timelock
       .connect(this.bob)
-      .executeTransaction(this.sushi.address, "0", "transferOwnership(address)", encodeParameters(["address"], [this.carol.address]), eta)
-    expect(await this.sushi.owner()).to.equal(this.carol.address)
+      .executeTransaction(this.jollof.address, "0", "transferOwnership(address)", encodeParameters(["address"], [this.carol.address]), eta)
+    expect(await this.jollof.owner()).to.equal(this.carol.address)
   })
 
-  it("should also work with MasterChef", async function () {
+  it("should also work with MamaPut", async function () {
     this.lp1 = await this.ERC20Mock.deploy("LPToken", "LP", "10000000000")
     this.lp2 = await this.ERC20Mock.deploy("LPToken", "LP", "10000000000")
-    this.chef = await this.MasterChef.deploy(this.sushi.address, this.dev.address, "1000", "0", "1000")
-    await this.sushi.transferOwnership(this.chef.address)
+    this.chef = await this.MamaPut.deploy(this.jollof.address, this.dev.address, "1000", "0", "1000")
+    await this.jollof.transferOwnership(this.chef.address)
     await this.chef.add("100", this.lp1.address, true)
     await this.chef.transferOwnership(this.timelock.address)
     const eta = (await latest()).add(duration.days(4))
