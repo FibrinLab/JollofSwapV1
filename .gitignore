@@ -3,8 +3,6 @@ artifacts/
 cache/
 coverage/
 exports/
-node_modules/
-types/
 package-lock.json
 coverage.json
 .env
