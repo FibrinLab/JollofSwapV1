@@ -1,0 +1,4334 @@
+{
+  "contractName": "IOracle",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "get",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rate",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "peek",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "rate",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "peekSpot",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "rate",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"get\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"peek\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"peekSpot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"rate\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"get(bytes)\":{\"params\":{\"data\":\"Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\"},\"returns\":{\"rate\":\"The rate of the requested asset / pair / pool.\",\"success\":\"if no valid (recent) rate is available, return false else true.\"}},\"name(bytes)\":{\"params\":{\"data\":\"Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\"},\"returns\":{\"_0\":\"(string) A human readable name about this oracle.\"}},\"peek(bytes)\":{\"params\":{\"data\":\"Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\"},\"returns\":{\"rate\":\"The rate of the requested asset / pair / pool.\",\"success\":\"if no valid (recent) rate is available, return false else true.\"}},\"peekSpot(bytes)\":{\"params\":{\"data\":\"Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\"},\"returns\":{\"rate\":\"The rate of the requested asset / pair / pool.\"}},\"symbol(bytes)\":{\"params\":{\"data\":\"Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\"},\"returns\":{\"_0\":\"(string) A human readable symbol name about this oracle.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"get(bytes)\":{\"notice\":\"Get the latest exchange rate.\"},\"name(bytes)\":{\"notice\":\"Returns a human readable name about this oracle.\"},\"peek(bytes)\":{\"notice\":\"Check the last exchange rate without any state changes.\"},\"peekSpot(bytes)\":{\"notice\":\"Check the current spot exchange rate without any state changes. For oracles like TWAP this will be different from peek().\"},\"symbol(bytes)\":{\"notice\":\"Returns a human readable (short) name about this oracle.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/akanimoh/Documents/ultimate3/sushiswapw/contracts/bentobox/PeggedOracleV1.sol\":\"IOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/akanimoh/Documents/ultimate3/sushiswapw/contracts/bentobox/PeggedOracleV1.sol\":{\"keccak256\":\"0x46adf9399279726397250e1664d0f694daba303c7549f9576335e9cf69e47a95\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e97e7ca400286987a4ba94c7017cd642515596eb591362c4c4cebf102a9718ef\",\"dweb:/ipfs/QmcveihTr5NXSoSWTPGQbp4CTbKrn6guVgDJVrNsdBB19W\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.6.12;\n\n// File contracts/interfaces/IOracle.sol\n// License-Identifier: MIT\n\ninterface IOracle {\n    /// @notice Get the latest exchange rate.\n    /// @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n    /// For example:\n    /// (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n    /// @return success if no valid (recent) rate is available, return false else true.\n    /// @return rate The rate of the requested asset / pair / pool.\n    function get(bytes calldata data) external returns (bool success, uint256 rate);\n\n    /// @notice Check the last exchange rate without any state changes.\n    /// @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n    /// For example:\n    /// (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n    /// @return success if no valid (recent) rate is available, return false else true.\n    /// @return rate The rate of the requested asset / pair / pool.\n    function peek(bytes calldata data) external view returns (bool success, uint256 rate);\n\n    /// @notice Check the current spot exchange rate without any state changes. For oracles like TWAP this will be different from peek().\n    /// @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n    /// For example:\n    /// (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n    /// @return rate The rate of the requested asset / pair / pool.\n    function peekSpot(bytes calldata data) external view returns (uint256 rate);\n\n    /// @notice Returns a human readable (short) name about this oracle.\n    /// @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n    /// For example:\n    /// (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n    /// @return (string) A human readable symbol name about this oracle.\n    function symbol(bytes calldata data) external view returns (string memory);\n\n    /// @notice Returns a human readable name about this oracle.\n    /// @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n    /// For example:\n    /// (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n    /// @return (string) A human readable name about this oracle.\n    function name(bytes calldata data) external view returns (string memory);\n}\n\n// File contracts/oracles/PeggedOracle.sol\n// License-Identifier: MIT\n\n/// @title PeggedOracle\n/// @author BoringCrypto\n/// @notice Oracle used for pegged prices that don't change\n/// @dev\ncontract PeggedOracleV1 is IOracle {\n    /// @notice\n    /// @dev\n    /// @param rate (uint256) The fixed exchange rate\n    /// @return  (bytes)\n    function getDataParameter(uint256 rate) public pure returns (bytes memory) {\n        return abi.encode(rate);\n    }\n\n    // Get the exchange rate\n    /// @inheritdoc IOracle\n    function get(bytes calldata data) public override returns (bool, uint256) {\n        uint256 rate = abi.decode(data, (uint256));\n        return (rate != 0, rate);\n    }\n\n    // Check the exchange rate without any state changes\n    /// @inheritdoc IOracle\n    function peek(bytes calldata data) public view override returns (bool, uint256) {\n        uint256 rate = abi.decode(data, (uint256));\n        return (rate != 0, rate);\n    }\n\n    // Check the current spot exchange rate without any state changes\n    /// @inheritdoc IOracle\n    function peekSpot(bytes calldata data) external view override returns (uint256 rate) {\n        (, rate) = peek(data);\n    }\n\n    /// @inheritdoc IOracle\n    function name(bytes calldata) public view override returns (string memory) {\n        return \"Pegged\";\n    }\n\n    /// @inheritdoc IOracle\n    function symbol(bytes calldata) public view override returns (string memory) {\n        return \"PEG\";\n    }\n}\n",
+  "sourcePath": "/home/akanimoh/Documents/ultimate3/sushiswapw/contracts/bentobox/PeggedOracleV1.sol",
+  "ast": {
+    "absolutePath": "/home/akanimoh/Documents/ultimate3/sushiswapw/contracts/bentobox/PeggedOracleV1.sol",
+    "exportedSymbols": {
+      "IOracle": [
+        12381
+      ],
+      "PeggedOracleV1": [
+        12496
+      ]
+    },
+    "id": 12497,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12336,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:10"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 12381,
+        "linearizedBaseContracts": [
+          12381
+        ],
+        "name": "IOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 12337,
+              "nodeType": "StructuredDocumentation",
+              "src": "150:484:10",
+              "text": "@notice Get the latest exchange rate.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return success if no valid (recent) rate is available, return false else true.\n @return rate The rate of the requested asset / pair / pool."
+            },
+            "functionSelector": "d6d7d525",
+            "id": 12346,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12339,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12346,
+                  "src": "652:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12338,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "652:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "651:21:10"
+            },
+            "returnParameters": {
+              "id": 12345,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12342,
+                  "mutability": "mutable",
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12346,
+                  "src": "691:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 12341,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "691:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12344,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12346,
+                  "src": "705:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12343,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "690:28:10"
+            },
+            "scope": 12381,
+            "src": "639:80:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 12347,
+              "nodeType": "StructuredDocumentation",
+              "src": "725:510:10",
+              "text": "@notice Check the last exchange rate without any state changes.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return success if no valid (recent) rate is available, return false else true.\n @return rate The rate of the requested asset / pair / pool."
+            },
+            "functionSelector": "eeb8a8d3",
+            "id": 12356,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "peek",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12349,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12356,
+                  "src": "1254:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12348,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1254:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1253:21:10"
+            },
+            "returnParameters": {
+              "id": 12355,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12352,
+                  "mutability": "mutable",
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12356,
+                  "src": "1298:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 12351,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1298:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12354,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12356,
+                  "src": "1312:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12353,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1312:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1297:28:10"
+            },
+            "scope": 12381,
+            "src": "1240:86:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 12357,
+              "nodeType": "StructuredDocumentation",
+              "src": "1332:488:10",
+              "text": "@notice Check the current spot exchange rate without any state changes. For oracles like TWAP this will be different from peek().\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return rate The rate of the requested asset / pair / pool."
+            },
+            "functionSelector": "d39bbef0",
+            "id": 12364,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "peekSpot",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12360,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12359,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12364,
+                  "src": "1843:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12358,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1843:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1842:21:10"
+            },
+            "returnParameters": {
+              "id": 12363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12362,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12364,
+                  "src": "1887:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12361,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1887:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1886:14:10"
+            },
+            "scope": 12381,
+            "src": "1825:76:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 12365,
+              "nodeType": "StructuredDocumentation",
+              "src": "1907:428:10",
+              "text": "@notice Returns a human readable (short) name about this oracle.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return (string) A human readable symbol name about this oracle."
+            },
+            "functionSelector": "c699c4d6",
+            "id": 12372,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "symbol",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12368,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12367,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12372,
+                  "src": "2356:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12366,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2356:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2355:21:10"
+            },
+            "returnParameters": {
+              "id": 12371,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12370,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12372,
+                  "src": "2400:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 12369,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2400:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2399:15:10"
+            },
+            "scope": 12381,
+            "src": "2340:75:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 12373,
+              "nodeType": "StructuredDocumentation",
+              "src": "2421:413:10",
+              "text": "@notice Returns a human readable name about this oracle.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return (string) A human readable name about this oracle."
+            },
+            "functionSelector": "d568866c",
+            "id": 12380,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "name",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12376,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12375,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12380,
+                  "src": "2853:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12374,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2853:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2852:21:10"
+            },
+            "returnParameters": {
+              "id": 12379,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12378,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12380,
+                  "src": "2897:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 12377,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2897:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2896:15:10"
+            },
+            "scope": 12381,
+            "src": "2839:73:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12497,
+        "src": "126:2788:10"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 12383,
+              "name": "IOracle",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12381,
+              "src": "3132:7:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IOracle_$12381",
+                "typeString": "contract IOracle"
+              }
+            },
+            "id": 12384,
+            "nodeType": "InheritanceSpecifier",
+            "src": "3132:7:10"
+          }
+        ],
+        "contractDependencies": [
+          12381
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 12382,
+          "nodeType": "StructuredDocumentation",
+          "src": "2987:118:10",
+          "text": "@title PeggedOracle\n @author BoringCrypto\n @notice Oracle used for pegged prices that don't change\n @dev"
+        },
+        "fullyImplemented": true,
+        "id": 12496,
+        "linearizedBaseContracts": [
+          12496,
+          12381
+        ],
+        "name": "PeggedOracleV1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 12397,
+              "nodeType": "Block",
+              "src": "3329:40:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12394,
+                        "name": "rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12387,
+                        "src": "3357:4:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 12392,
+                        "name": "abi",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -1,
+                        "src": "3346:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_abi",
+                          "typeString": "abi"
+                        }
+                      },
+                      "id": 12393,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "encode",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "3346:10:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                        "typeString": "function () pure returns (bytes memory)"
+                      }
+                    },
+                    "id": 12395,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3346:16:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_memory_ptr",
+                      "typeString": "bytes memory"
+                    }
+                  },
+                  "functionReturnParameters": 12391,
+                  "id": 12396,
+                  "nodeType": "Return",
+                  "src": "3339:23:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12385,
+              "nodeType": "StructuredDocumentation",
+              "src": "3146:103:10",
+              "text": "@notice\n @dev\n @param rate (uint256) The fixed exchange rate\n @return  (bytes)"
+            },
+            "functionSelector": "ea887d08",
+            "id": 12398,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDataParameter",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12388,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12387,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12398,
+                  "src": "3280:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12386,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3280:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3279:14:10"
+            },
+            "returnParameters": {
+              "id": 12391,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12390,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12398,
+                  "src": "3315:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12389,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3315:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3314:14:10"
+            },
+            "scope": 12496,
+            "src": "3254:115:10",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              12346
+            ],
+            "body": {
+              "id": 12425,
+              "nodeType": "Block",
+              "src": "3506:93:10",
+              "statements": [
+                {
+                  "assignments": [
+                    12410
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12410,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 12425,
+                      "src": "3516:12:10",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12409,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3516:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12418,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12413,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12401,
+                        "src": "3542:4:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "components": [
+                          {
+                            "argumentTypes": null,
+                            "id": 12415,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3549:7:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_uint256_$",
+                              "typeString": "type(uint256)"
+                            },
+                            "typeName": {
+                              "id": 12414,
+                              "name": "uint256",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "3549:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": null,
+                                "typeString": null
+                              }
+                            }
+                          }
+                        ],
+                        "id": 12416,
+                        "isConstant": false,
+                        "isInlineArray": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "3548:9:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        },
+                        {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 12411,
+                        "name": "abi",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -1,
+                        "src": "3531:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_abi",
+                          "typeString": "abi"
+                        }
+                      },
+                      "id": 12412,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "decode",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "3531:10:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_abidecode_pure$__$returns$__$",
+                        "typeString": "function () pure"
+                      }
+                    },
+                    "id": 12417,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3531:27:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3516:42:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 12421,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 12419,
+                          "name": "rate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12410,
+                          "src": "3576:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 12420,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "3584:1:10",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "3576:9:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 12422,
+                        "name": "rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12410,
+                        "src": "3587:4:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 12423,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "3575:17:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_bool_$_t_uint256_$",
+                      "typeString": "tuple(bool,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 12408,
+                  "id": 12424,
+                  "nodeType": "Return",
+                  "src": "3568:24:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12399,
+              "nodeType": "StructuredDocumentation",
+              "src": "3404:23:10",
+              "text": "@inheritdoc IOracle"
+            },
+            "functionSelector": "d6d7d525",
+            "id": 12426,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 12403,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "3473:8:10"
+            },
+            "parameters": {
+              "id": 12402,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12401,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12426,
+                  "src": "3445:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12400,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3445:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3444:21:10"
+            },
+            "returnParameters": {
+              "id": 12408,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12405,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12426,
+                  "src": "3491:4:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 12404,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3491:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12407,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12426,
+                  "src": "3497:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12406,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3497:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3490:15:10"
+            },
+            "scope": 12496,
+            "src": "3432:167:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              12356
+            ],
+            "body": {
+              "id": 12453,
+              "nodeType": "Block",
+              "src": "3770:93:10",
+              "statements": [
+                {
+                  "assignments": [
+                    12438
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12438,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 12453,
+                      "src": "3780:12:10",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12437,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3780:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12446,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12441,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12429,
+                        "src": "3806:4:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "components": [
+                          {
+                            "argumentTypes": null,
+                            "id": 12443,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3813:7:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_uint256_$",
+                              "typeString": "type(uint256)"
+                            },
+                            "typeName": {
+                              "id": 12442,
+                              "name": "uint256",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "3813:7:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": null,
+                                "typeString": null
+                              }
+                            }
+                          }
+                        ],
+                        "id": 12444,
+                        "isConstant": false,
+                        "isInlineArray": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "TupleExpression",
+                        "src": "3812:9:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_calldata_ptr",
+                          "typeString": "bytes calldata"
+                        },
+                        {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 12439,
+                        "name": "abi",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": -1,
+                        "src": "3795:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_abi",
+                          "typeString": "abi"
+                        }
+                      },
+                      "id": 12440,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "decode",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "3795:10:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_abidecode_pure$__$returns$__$",
+                        "typeString": "function () pure"
+                      }
+                    },
+                    "id": 12445,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3795:27:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3780:42:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 12449,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 12447,
+                          "name": "rate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12438,
+                          "src": "3840:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 12448,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "3848:1:10",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "3840:9:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 12450,
+                        "name": "rate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12438,
+                        "src": "3851:4:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 12451,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "3839:17:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_bool_$_t_uint256_$",
+                      "typeString": "tuple(bool,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 12436,
+                  "id": 12452,
+                  "nodeType": "Return",
+                  "src": "3832:24:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12427,
+              "nodeType": "StructuredDocumentation",
+              "src": "3662:23:10",
+              "text": "@inheritdoc IOracle"
+            },
+            "functionSelector": "eeb8a8d3",
+            "id": 12454,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "peek",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 12431,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "3737:8:10"
+            },
+            "parameters": {
+              "id": 12430,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12429,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12454,
+                  "src": "3704:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12428,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3704:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3703:21:10"
+            },
+            "returnParameters": {
+              "id": 12436,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12433,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12454,
+                  "src": "3755:4:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 12432,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3755:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12435,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12454,
+                  "src": "3761:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12434,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3761:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3754:15:10"
+            },
+            "scope": 12496,
+            "src": "3690:173:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              12364
+            ],
+            "body": {
+              "id": 12470,
+              "nodeType": "Block",
+              "src": "4052:38:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 12468,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "components": [
+                        null,
+                        {
+                          "argumentTypes": null,
+                          "id": 12463,
+                          "name": "rate",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12461,
+                          "src": "4065:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "id": 12464,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "TupleExpression",
+                      "src": "4062:8:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$_t_uint256_$",
+                        "typeString": "tuple(,uint256)"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 12466,
+                          "name": "data",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12457,
+                          "src": "4078:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_calldata_ptr",
+                            "typeString": "bytes calldata"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes_calldata_ptr",
+                            "typeString": "bytes calldata"
+                          }
+                        ],
+                        "id": 12465,
+                        "name": "peek",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12454,
+                        "src": "4073:4:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_bytes_calldata_ptr_$returns$_t_bool_$_t_uint256_$",
+                          "typeString": "function (bytes calldata) view returns (bool,uint256)"
+                        }
+                      },
+                      "id": 12467,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "4073:10:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_bool_$_t_uint256_$",
+                        "typeString": "tuple(bool,uint256)"
+                      }
+                    },
+                    "src": "4062:21:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 12469,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4062:21:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12455,
+              "nodeType": "StructuredDocumentation",
+              "src": "3939:23:10",
+              "text": "@inheritdoc IOracle"
+            },
+            "functionSelector": "d39bbef0",
+            "id": 12471,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "peekSpot",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 12459,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "4020:8:10"
+            },
+            "parameters": {
+              "id": 12458,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12457,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12471,
+                  "src": "3985:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12456,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3985:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3984:21:10"
+            },
+            "returnParameters": {
+              "id": 12462,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12461,
+                  "mutability": "mutable",
+                  "name": "rate",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12471,
+                  "src": "4038:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12460,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4038:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4037:14:10"
+            },
+            "scope": 12496,
+            "src": "3967:123:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              12380
+            ],
+            "body": {
+              "id": 12482,
+              "nodeType": "Block",
+              "src": "4199:32:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "506567676564",
+                    "id": 12480,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "4216:8:10",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_23764ad355cacb3f4f09f175da896ac2dfbe6ffb98897ac49716ce6268787b89",
+                      "typeString": "literal_string \"Pegged\""
+                    },
+                    "value": "Pegged"
+                  },
+                  "functionReturnParameters": 12479,
+                  "id": 12481,
+                  "nodeType": "Return",
+                  "src": "4209:15:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12472,
+              "nodeType": "StructuredDocumentation",
+              "src": "4096:23:10",
+              "text": "@inheritdoc IOracle"
+            },
+            "functionSelector": "d568866c",
+            "id": 12483,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "name",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 12476,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "4166:8:10"
+            },
+            "parameters": {
+              "id": 12475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12474,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12483,
+                  "src": "4138:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12473,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4138:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4137:16:10"
+            },
+            "returnParameters": {
+              "id": 12479,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12478,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12483,
+                  "src": "4184:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 12477,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4184:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4183:15:10"
+            },
+            "scope": 12496,
+            "src": "4124:107:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              12372
+            ],
+            "body": {
+              "id": 12494,
+              "nodeType": "Block",
+              "src": "4342:29:10",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "504547",
+                    "id": 12492,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "string",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "4359:5:10",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_stringliteral_44ede432227d66f802b43aeeece6462e586ebe647b28491e9f3c2e0bb799b616",
+                      "typeString": "literal_string \"PEG\""
+                    },
+                    "value": "PEG"
+                  },
+                  "functionReturnParameters": 12491,
+                  "id": 12493,
+                  "nodeType": "Return",
+                  "src": "4352:12:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 12484,
+              "nodeType": "StructuredDocumentation",
+              "src": "4237:23:10",
+              "text": "@inheritdoc IOracle"
+            },
+            "functionSelector": "c699c4d6",
+            "id": 12495,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "symbol",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 12488,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "4309:8:10"
+            },
+            "parameters": {
+              "id": 12487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12486,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12495,
+                  "src": "4281:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 12485,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4281:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4280:16:10"
+            },
+            "returnParameters": {
+              "id": 12491,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12490,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12495,
+                  "src": "4327:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 12489,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4327:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4326:15:10"
+            },
+            "scope": 12496,
+            "src": "4265:106:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 12497,
+        "src": "3105:1268:10"
+      }
+    ],
+    "src": "32:4342:10"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/akanimoh/Documents/ultimate3/sushiswapw/contracts/bentobox/PeggedOracleV1.sol",
+      "exportedSymbols": {
+        "IOracle": [
+          12381
+        ],
+        "PeggedOracleV1": [
+          12496
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 12336,
+        "name": "PragmaDirective",
+        "src": "32:23:10"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            12381
+          ],
+          "name": "IOracle",
+          "scope": 12497
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "d6d7d525",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "get",
+              "overrides": null,
+              "scope": 12381,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Get the latest exchange rate.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return success if no valid (recent) rate is available, return false else true.\n @return rate The rate of the requested asset / pair / pool."
+                },
+                "id": 12337,
+                "name": "StructuredDocumentation",
+                "src": "150:484:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12346,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12338,
+                        "name": "ElementaryTypeName",
+                        "src": "652:5:10"
+                      }
+                    ],
+                    "id": 12339,
+                    "name": "VariableDeclaration",
+                    "src": "652:19:10"
+                  }
+                ],
+                "id": 12340,
+                "name": "ParameterList",
+                "src": "651:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "success",
+                      "overrides": null,
+                      "scope": 12346,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 12341,
+                        "name": "ElementaryTypeName",
+                        "src": "691:4:10"
+                      }
+                    ],
+                    "id": 12342,
+                    "name": "VariableDeclaration",
+                    "src": "691:12:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "overrides": null,
+                      "scope": 12346,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12343,
+                        "name": "ElementaryTypeName",
+                        "src": "705:7:10"
+                      }
+                    ],
+                    "id": 12344,
+                    "name": "VariableDeclaration",
+                    "src": "705:12:10"
+                  }
+                ],
+                "id": 12345,
+                "name": "ParameterList",
+                "src": "690:28:10"
+              }
+            ],
+            "id": 12346,
+            "name": "FunctionDefinition",
+            "src": "639:80:10"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "eeb8a8d3",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "peek",
+              "overrides": null,
+              "scope": 12381,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Check the last exchange rate without any state changes.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return success if no valid (recent) rate is available, return false else true.\n @return rate The rate of the requested asset / pair / pool."
+                },
+                "id": 12347,
+                "name": "StructuredDocumentation",
+                "src": "725:510:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12356,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12348,
+                        "name": "ElementaryTypeName",
+                        "src": "1254:5:10"
+                      }
+                    ],
+                    "id": 12349,
+                    "name": "VariableDeclaration",
+                    "src": "1254:19:10"
+                  }
+                ],
+                "id": 12350,
+                "name": "ParameterList",
+                "src": "1253:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "success",
+                      "overrides": null,
+                      "scope": 12356,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 12351,
+                        "name": "ElementaryTypeName",
+                        "src": "1298:4:10"
+                      }
+                    ],
+                    "id": 12352,
+                    "name": "VariableDeclaration",
+                    "src": "1298:12:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "overrides": null,
+                      "scope": 12356,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12353,
+                        "name": "ElementaryTypeName",
+                        "src": "1312:7:10"
+                      }
+                    ],
+                    "id": 12354,
+                    "name": "VariableDeclaration",
+                    "src": "1312:12:10"
+                  }
+                ],
+                "id": 12355,
+                "name": "ParameterList",
+                "src": "1297:28:10"
+              }
+            ],
+            "id": 12356,
+            "name": "FunctionDefinition",
+            "src": "1240:86:10"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "d39bbef0",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "peekSpot",
+              "overrides": null,
+              "scope": 12381,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Check the current spot exchange rate without any state changes. For oracles like TWAP this will be different from peek().\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return rate The rate of the requested asset / pair / pool."
+                },
+                "id": 12357,
+                "name": "StructuredDocumentation",
+                "src": "1332:488:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12364,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12358,
+                        "name": "ElementaryTypeName",
+                        "src": "1843:5:10"
+                      }
+                    ],
+                    "id": 12359,
+                    "name": "VariableDeclaration",
+                    "src": "1843:19:10"
+                  }
+                ],
+                "id": 12360,
+                "name": "ParameterList",
+                "src": "1842:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "overrides": null,
+                      "scope": 12364,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12361,
+                        "name": "ElementaryTypeName",
+                        "src": "1887:7:10"
+                      }
+                    ],
+                    "id": 12362,
+                    "name": "VariableDeclaration",
+                    "src": "1887:12:10"
+                  }
+                ],
+                "id": 12363,
+                "name": "ParameterList",
+                "src": "1886:14:10"
+              }
+            ],
+            "id": 12364,
+            "name": "FunctionDefinition",
+            "src": "1825:76:10"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "c699c4d6",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "symbol",
+              "overrides": null,
+              "scope": 12381,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Returns a human readable (short) name about this oracle.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return (string) A human readable symbol name about this oracle."
+                },
+                "id": 12365,
+                "name": "StructuredDocumentation",
+                "src": "1907:428:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12372,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12366,
+                        "name": "ElementaryTypeName",
+                        "src": "2356:5:10"
+                      }
+                    ],
+                    "id": 12367,
+                    "name": "VariableDeclaration",
+                    "src": "2356:19:10"
+                  }
+                ],
+                "id": 12368,
+                "name": "ParameterList",
+                "src": "2355:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12372,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 12369,
+                        "name": "ElementaryTypeName",
+                        "src": "2400:6:10"
+                      }
+                    ],
+                    "id": 12370,
+                    "name": "VariableDeclaration",
+                    "src": "2400:13:10"
+                  }
+                ],
+                "id": 12371,
+                "name": "ParameterList",
+                "src": "2399:15:10"
+              }
+            ],
+            "id": 12372,
+            "name": "FunctionDefinition",
+            "src": "2340:75:10"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "d568866c",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "name",
+              "overrides": null,
+              "scope": 12381,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Returns a human readable name about this oracle.\n @param data Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle.\n For example:\n (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));\n @return (string) A human readable name about this oracle."
+                },
+                "id": 12373,
+                "name": "StructuredDocumentation",
+                "src": "2421:413:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12380,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12374,
+                        "name": "ElementaryTypeName",
+                        "src": "2853:5:10"
+                      }
+                    ],
+                    "id": 12375,
+                    "name": "VariableDeclaration",
+                    "src": "2853:19:10"
+                  }
+                ],
+                "id": 12376,
+                "name": "ParameterList",
+                "src": "2852:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12380,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 12377,
+                        "name": "ElementaryTypeName",
+                        "src": "2897:6:10"
+                      }
+                    ],
+                    "id": 12378,
+                    "name": "VariableDeclaration",
+                    "src": "2897:13:10"
+                  }
+                ],
+                "id": 12379,
+                "name": "ParameterList",
+                "src": "2896:15:10"
+              }
+            ],
+            "id": 12380,
+            "name": "FunctionDefinition",
+            "src": "2839:73:10"
+          }
+        ],
+        "id": 12381,
+        "name": "ContractDefinition",
+        "src": "126:2788:10"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            12381
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            12496,
+            12381
+          ],
+          "name": "PeggedOracleV1",
+          "scope": 12497
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": "@title PeggedOracle\n @author BoringCrypto\n @notice Oracle used for pegged prices that don't change\n @dev"
+            },
+            "id": 12382,
+            "name": "StructuredDocumentation",
+            "src": "2987:118:10"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IOracle",
+                  "referencedDeclaration": 12381,
+                  "type": "contract IOracle"
+                },
+                "id": 12383,
+                "name": "UserDefinedTypeName",
+                "src": "3132:7:10"
+              }
+            ],
+            "id": 12384,
+            "name": "InheritanceSpecifier",
+            "src": "3132:7:10"
+          },
+          {
+            "attributes": {
+              "functionSelector": "ea887d08",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getDataParameter",
+              "overrides": null,
+              "scope": 12496,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice\n @dev\n @param rate (uint256) The fixed exchange rate\n @return  (bytes)"
+                },
+                "id": 12385,
+                "name": "StructuredDocumentation",
+                "src": "3146:103:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "overrides": null,
+                      "scope": 12398,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12386,
+                        "name": "ElementaryTypeName",
+                        "src": "3280:7:10"
+                      }
+                    ],
+                    "id": 12387,
+                    "name": "VariableDeclaration",
+                    "src": "3280:12:10"
+                  }
+                ],
+                "id": 12388,
+                "name": "ParameterList",
+                "src": "3279:14:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12398,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12389,
+                        "name": "ElementaryTypeName",
+                        "src": "3315:5:10"
+                      }
+                    ],
+                    "id": 12390,
+                    "name": "VariableDeclaration",
+                    "src": "3315:12:10"
+                  }
+                ],
+                "id": 12391,
+                "name": "ParameterList",
+                "src": "3314:14:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12391
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "bytes memory",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "encode",
+                              "referencedDeclaration": null,
+                              "type": "function () pure returns (bytes memory)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -1,
+                                  "type": "abi",
+                                  "value": "abi"
+                                },
+                                "id": 12392,
+                                "name": "Identifier",
+                                "src": "3346:3:10"
+                              }
+                            ],
+                            "id": 12393,
+                            "name": "MemberAccess",
+                            "src": "3346:10:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12387,
+                              "type": "uint256",
+                              "value": "rate"
+                            },
+                            "id": 12394,
+                            "name": "Identifier",
+                            "src": "3357:4:10"
+                          }
+                        ],
+                        "id": 12395,
+                        "name": "FunctionCall",
+                        "src": "3346:16:10"
+                      }
+                    ],
+                    "id": 12396,
+                    "name": "Return",
+                    "src": "3339:23:10"
+                  }
+                ],
+                "id": 12397,
+                "name": "Block",
+                "src": "3329:40:10"
+              }
+            ],
+            "id": 12398,
+            "name": "FunctionDefinition",
+            "src": "3254:115:10"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                12346
+              ],
+              "functionSelector": "d6d7d525",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "get",
+              "scope": 12496,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@inheritdoc IOracle"
+                },
+                "id": 12399,
+                "name": "StructuredDocumentation",
+                "src": "3404:23:10"
+              },
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 12403,
+                "name": "OverrideSpecifier",
+                "src": "3473:8:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12426,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12400,
+                        "name": "ElementaryTypeName",
+                        "src": "3445:5:10"
+                      }
+                    ],
+                    "id": 12401,
+                    "name": "VariableDeclaration",
+                    "src": "3445:19:10"
+                  }
+                ],
+                "id": 12402,
+                "name": "ParameterList",
+                "src": "3444:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12426,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 12404,
+                        "name": "ElementaryTypeName",
+                        "src": "3491:4:10"
+                      }
+                    ],
+                    "id": 12405,
+                    "name": "VariableDeclaration",
+                    "src": "3491:4:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12426,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12406,
+                        "name": "ElementaryTypeName",
+                        "src": "3497:7:10"
+                      }
+                    ],
+                    "id": 12407,
+                    "name": "VariableDeclaration",
+                    "src": "3497:7:10"
+                  }
+                ],
+                "id": 12408,
+                "name": "ParameterList",
+                "src": "3490:15:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        12410
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "rate",
+                          "overrides": null,
+                          "scope": 12425,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 12409,
+                            "name": "ElementaryTypeName",
+                            "src": "3516:7:10"
+                          }
+                        ],
+                        "id": 12410,
+                        "name": "VariableDeclaration",
+                        "src": "3516:12:10"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes_calldata_ptr",
+                                  "typeString": "bytes calldata"
+                                },
+                                {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "decode",
+                              "referencedDeclaration": null,
+                              "type": "function () pure"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -1,
+                                  "type": "abi",
+                                  "value": "abi"
+                                },
+                                "id": 12411,
+                                "name": "Identifier",
+                                "src": "3531:3:10"
+                              }
+                            ],
+                            "id": 12412,
+                            "name": "MemberAccess",
+                            "src": "3531:10:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12401,
+                              "type": "bytes calldata",
+                              "value": "data"
+                            },
+                            "id": 12413,
+                            "name": "Identifier",
+                            "src": "3542:4:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "type(uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "name": "uint256",
+                                      "type": null
+                                    },
+                                    "id": 12414,
+                                    "name": "ElementaryTypeName",
+                                    "src": "3549:7:10"
+                                  }
+                                ],
+                                "id": 12415,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "3549:7:10"
+                              }
+                            ],
+                            "id": 12416,
+                            "name": "TupleExpression",
+                            "src": "3548:9:10"
+                          }
+                        ],
+                        "id": 12417,
+                        "name": "FunctionCall",
+                        "src": "3531:27:10"
+                      }
+                    ],
+                    "id": 12418,
+                    "name": "VariableDeclarationStatement",
+                    "src": "3516:42:10"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12408
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(bool,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 12410,
+                                  "type": "uint256",
+                                  "value": "rate"
+                                },
+                                "id": 12419,
+                                "name": "Identifier",
+                                "src": "3576:4:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 12420,
+                                "name": "Literal",
+                                "src": "3584:1:10"
+                              }
+                            ],
+                            "id": 12421,
+                            "name": "BinaryOperation",
+                            "src": "3576:9:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12410,
+                              "type": "uint256",
+                              "value": "rate"
+                            },
+                            "id": 12422,
+                            "name": "Identifier",
+                            "src": "3587:4:10"
+                          }
+                        ],
+                        "id": 12423,
+                        "name": "TupleExpression",
+                        "src": "3575:17:10"
+                      }
+                    ],
+                    "id": 12424,
+                    "name": "Return",
+                    "src": "3568:24:10"
+                  }
+                ],
+                "id": 12425,
+                "name": "Block",
+                "src": "3506:93:10"
+              }
+            ],
+            "id": 12426,
+            "name": "FunctionDefinition",
+            "src": "3432:167:10"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                12356
+              ],
+              "functionSelector": "eeb8a8d3",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "peek",
+              "scope": 12496,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@inheritdoc IOracle"
+                },
+                "id": 12427,
+                "name": "StructuredDocumentation",
+                "src": "3662:23:10"
+              },
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 12431,
+                "name": "OverrideSpecifier",
+                "src": "3737:8:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12454,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12428,
+                        "name": "ElementaryTypeName",
+                        "src": "3704:5:10"
+                      }
+                    ],
+                    "id": 12429,
+                    "name": "VariableDeclaration",
+                    "src": "3704:19:10"
+                  }
+                ],
+                "id": 12430,
+                "name": "ParameterList",
+                "src": "3703:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12454,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 12432,
+                        "name": "ElementaryTypeName",
+                        "src": "3755:4:10"
+                      }
+                    ],
+                    "id": 12433,
+                    "name": "VariableDeclaration",
+                    "src": "3755:4:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12454,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12434,
+                        "name": "ElementaryTypeName",
+                        "src": "3761:7:10"
+                      }
+                    ],
+                    "id": 12435,
+                    "name": "VariableDeclaration",
+                    "src": "3761:7:10"
+                  }
+                ],
+                "id": 12436,
+                "name": "ParameterList",
+                "src": "3754:15:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        12438
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "rate",
+                          "overrides": null,
+                          "scope": 12453,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 12437,
+                            "name": "ElementaryTypeName",
+                            "src": "3780:7:10"
+                          }
+                        ],
+                        "id": 12438,
+                        "name": "VariableDeclaration",
+                        "src": "3780:12:10"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes_calldata_ptr",
+                                  "typeString": "bytes calldata"
+                                },
+                                {
+                                  "typeIdentifier": "t_type$_t_uint256_$",
+                                  "typeString": "type(uint256)"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "decode",
+                              "referencedDeclaration": null,
+                              "type": "function () pure"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": -1,
+                                  "type": "abi",
+                                  "value": "abi"
+                                },
+                                "id": 12439,
+                                "name": "Identifier",
+                                "src": "3795:3:10"
+                              }
+                            ],
+                            "id": 12440,
+                            "name": "MemberAccess",
+                            "src": "3795:10:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12429,
+                              "type": "bytes calldata",
+                              "value": "data"
+                            },
+                            "id": 12441,
+                            "name": "Identifier",
+                            "src": "3806:4:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "type(uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "name": "uint256",
+                                      "type": null
+                                    },
+                                    "id": 12442,
+                                    "name": "ElementaryTypeName",
+                                    "src": "3813:7:10"
+                                  }
+                                ],
+                                "id": 12443,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "3813:7:10"
+                              }
+                            ],
+                            "id": 12444,
+                            "name": "TupleExpression",
+                            "src": "3812:9:10"
+                          }
+                        ],
+                        "id": 12445,
+                        "name": "FunctionCall",
+                        "src": "3795:27:10"
+                      }
+                    ],
+                    "id": 12446,
+                    "name": "VariableDeclarationStatement",
+                    "src": "3780:42:10"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12436
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "tuple(bool,uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 12438,
+                                  "type": "uint256",
+                                  "value": "rate"
+                                },
+                                "id": 12447,
+                                "name": "Identifier",
+                                "src": "3840:4:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 12448,
+                                "name": "Literal",
+                                "src": "3848:1:10"
+                              }
+                            ],
+                            "id": 12449,
+                            "name": "BinaryOperation",
+                            "src": "3840:9:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12438,
+                              "type": "uint256",
+                              "value": "rate"
+                            },
+                            "id": 12450,
+                            "name": "Identifier",
+                            "src": "3851:4:10"
+                          }
+                        ],
+                        "id": 12451,
+                        "name": "TupleExpression",
+                        "src": "3839:17:10"
+                      }
+                    ],
+                    "id": 12452,
+                    "name": "Return",
+                    "src": "3832:24:10"
+                  }
+                ],
+                "id": 12453,
+                "name": "Block",
+                "src": "3770:93:10"
+              }
+            ],
+            "id": 12454,
+            "name": "FunctionDefinition",
+            "src": "3690:173:10"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                12364
+              ],
+              "functionSelector": "d39bbef0",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "peekSpot",
+              "scope": 12496,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@inheritdoc IOracle"
+                },
+                "id": 12455,
+                "name": "StructuredDocumentation",
+                "src": "3939:23:10"
+              },
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 12459,
+                "name": "OverrideSpecifier",
+                "src": "4020:8:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "overrides": null,
+                      "scope": 12471,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12456,
+                        "name": "ElementaryTypeName",
+                        "src": "3985:5:10"
+                      }
+                    ],
+                    "id": 12457,
+                    "name": "VariableDeclaration",
+                    "src": "3985:19:10"
+                  }
+                ],
+                "id": 12458,
+                "name": "ParameterList",
+                "src": "3984:21:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "rate",
+                      "overrides": null,
+                      "scope": 12471,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12460,
+                        "name": "ElementaryTypeName",
+                        "src": "4038:7:10"
+                      }
+                    ],
+                    "id": 12461,
+                    "name": "VariableDeclaration",
+                    "src": "4038:12:10"
+                  }
+                ],
+                "id": 12462,
+                "name": "ParameterList",
+                "src": "4037:14:10"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "tuple()"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "components": [
+                                null,
+                                {
+                                  "attributes": {
+                                    "argumentTypes": null,
+                                    "overloadedDeclarations": [
+                                      null
+                                    ],
+                                    "referencedDeclaration": 12461,
+                                    "type": "uint256",
+                                    "value": "rate"
+                                  },
+                                  "id": 12463,
+                                  "name": "Identifier",
+                                  "src": "4065:4:10"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "tuple(,uint256)"
+                            },
+                            "id": 12464,
+                            "name": "TupleExpression",
+                            "src": "4062:8:10"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "tuple(bool,uint256)",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_bytes_calldata_ptr",
+                                      "typeString": "bytes calldata"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 12454,
+                                  "type": "function (bytes calldata) view returns (bool,uint256)",
+                                  "value": "peek"
+                                },
+                                "id": 12465,
+                                "name": "Identifier",
+                                "src": "4073:4:10"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 12457,
+                                  "type": "bytes calldata",
+                                  "value": "data"
+                                },
+                                "id": 12466,
+                                "name": "Identifier",
+                                "src": "4078:4:10"
+                              }
+                            ],
+                            "id": 12467,
+                            "name": "FunctionCall",
+                            "src": "4073:10:10"
+                          }
+                        ],
+                        "id": 12468,
+                        "name": "Assignment",
+                        "src": "4062:21:10"
+                      }
+                    ],
+                    "id": 12469,
+                    "name": "ExpressionStatement",
+                    "src": "4062:21:10"
+                  }
+                ],
+                "id": 12470,
+                "name": "Block",
+                "src": "4052:38:10"
+              }
+            ],
+            "id": 12471,
+            "name": "FunctionDefinition",
+            "src": "3967:123:10"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                12380
+              ],
+              "functionSelector": "d568866c",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "name",
+              "scope": 12496,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@inheritdoc IOracle"
+                },
+                "id": 12472,
+                "name": "StructuredDocumentation",
+                "src": "4096:23:10"
+              },
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 12476,
+                "name": "OverrideSpecifier",
+                "src": "4166:8:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12483,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12473,
+                        "name": "ElementaryTypeName",
+                        "src": "4138:5:10"
+                      }
+                    ],
+                    "id": 12474,
+                    "name": "VariableDeclaration",
+                    "src": "4138:14:10"
+                  }
+                ],
+                "id": 12475,
+                "name": "ParameterList",
+                "src": "4137:16:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12483,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 12477,
+                        "name": "ElementaryTypeName",
+                        "src": "4184:6:10"
+                      }
+                    ],
+                    "id": 12478,
+                    "name": "VariableDeclaration",
+                    "src": "4184:13:10"
+                  }
+                ],
+                "id": 12479,
+                "name": "ParameterList",
+                "src": "4183:15:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12479
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "506567676564",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "string",
+                          "type": "literal_string \"Pegged\"",
+                          "value": "Pegged"
+                        },
+                        "id": 12480,
+                        "name": "Literal",
+                        "src": "4216:8:10"
+                      }
+                    ],
+                    "id": 12481,
+                    "name": "Return",
+                    "src": "4209:15:10"
+                  }
+                ],
+                "id": 12482,
+                "name": "Block",
+                "src": "4199:32:10"
+              }
+            ],
+            "id": 12483,
+            "name": "FunctionDefinition",
+            "src": "4124:107:10"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                12372
+              ],
+              "functionSelector": "c699c4d6",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "symbol",
+              "scope": 12496,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@inheritdoc IOracle"
+                },
+                "id": 12484,
+                "name": "StructuredDocumentation",
+                "src": "4237:23:10"
+              },
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 12488,
+                "name": "OverrideSpecifier",
+                "src": "4309:8:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12495,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 12485,
+                        "name": "ElementaryTypeName",
+                        "src": "4281:5:10"
+                      }
+                    ],
+                    "id": 12486,
+                    "name": "VariableDeclaration",
+                    "src": "4281:14:10"
+                  }
+                ],
+                "id": 12487,
+                "name": "ParameterList",
+                "src": "4280:16:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 12495,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 12489,
+                        "name": "ElementaryTypeName",
+                        "src": "4327:6:10"
+                      }
+                    ],
+                    "id": 12490,
+                    "name": "VariableDeclaration",
+                    "src": "4327:13:10"
+                  }
+                ],
+                "id": 12491,
+                "name": "ParameterList",
+                "src": "4326:15:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12491
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "504547",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "string",
+                          "type": "literal_string \"PEG\"",
+                          "value": "PEG"
+                        },
+                        "id": 12492,
+                        "name": "Literal",
+                        "src": "4359:5:10"
+                      }
+                    ],
+                    "id": 12493,
+                    "name": "Return",
+                    "src": "4352:12:10"
+                  }
+                ],
+                "id": 12494,
+                "name": "Block",
+                "src": "4342:29:10"
+              }
+            ],
+            "id": 12495,
+            "name": "FunctionDefinition",
+            "src": "4265:106:10"
+          }
+        ],
+        "id": 12496,
+        "name": "ContractDefinition",
+        "src": "3105:1268:10"
+      }
+    ],
+    "id": 12497,
+    "name": "SourceUnit",
+    "src": "32:4342:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-07-30T15:51:13.189Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "get(bytes)": {
+        "params": {
+          "data": "Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));"
+        },
+        "returns": {
+          "rate": "The rate of the requested asset / pair / pool.",
+          "success": "if no valid (recent) rate is available, return false else true."
+        }
+      },
+      "name(bytes)": {
+        "params": {
+          "data": "Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));"
+        },
+        "returns": {
+          "_0": "(string) A human readable name about this oracle."
+        }
+      },
+      "peek(bytes)": {
+        "params": {
+          "data": "Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));"
+        },
+        "returns": {
+          "rate": "The rate of the requested asset / pair / pool.",
+          "success": "if no valid (recent) rate is available, return false else true."
+        }
+      },
+      "peekSpot(bytes)": {
+        "params": {
+          "data": "Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));"
+        },
+        "returns": {
+          "rate": "The rate of the requested asset / pair / pool."
+        }
+      },
+      "symbol(bytes)": {
+        "params": {
+          "data": "Usually abi encoded, implementation specific data that contains information and arguments to & about the oracle. For example: (string memory collateralSymbol, string memory assetSymbol, uint256 division) = abi.decode(data, (string, string, uint256));"
+        },
+        "returns": {
+          "_0": "(string) A human readable symbol name about this oracle."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "get(bytes)": {
+        "notice": "Get the latest exchange rate."
+      },
+      "name(bytes)": {
+        "notice": "Returns a human readable name about this oracle."
+      },
+      "peek(bytes)": {
+        "notice": "Check the last exchange rate without any state changes."
+      },
+      "peekSpot(bytes)": {
+        "notice": "Check the current spot exchange rate without any state changes. For oracles like TWAP this will be different from peek()."
+      },
+      "symbol(bytes)": {
+        "notice": "Returns a human readable (short) name about this oracle."
+      }
+    },
+    "version": 1
+  }
+}
